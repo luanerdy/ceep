@@ -2,6 +2,15 @@ import React, { Component } from 'react';
 import './form-cadastro.css';
 
 class FormularioCadastro extends Component {
+	constructor() {
+		super();
+		this.titulo = '';
+	}
+
+	handleMudancaTitulo = (event) => {
+		this.titulo = event.target.value;
+	}
+
 	render() {
 		return (
 			<form className="form-cadastro ">
@@ -9,6 +18,7 @@ class FormularioCadastro extends Component {
 					type="text"
 					placeholder="Título"
 					className="form-cadastro_input"
+					onChange={this.handleMudancaTitulo}
 				/>
 				<textarea
 					rows={15}
